@@ -13,6 +13,10 @@
     Views -> - Merujuk ke folder app/views 
 
 */
+/*
+    Model -> - Berbagai macam bisa di isi 
+
+*/
 class App{
     protected $controller = 'Home';
     protected $method = 'index';
@@ -24,7 +28,7 @@ class App{
         $url = $this->parseURL();
         /*
             CONTROLLER :
-            posisi sedang di file FILE INDEX paling luar
+            posisi sedang di file FILE INDEX paling luar/di folder public
         */
         if(file_exists('../app/controllers/'. $url[0] .'.php'))
         {
@@ -33,6 +37,7 @@ class App{
             unset($url[0]);
             //var_dump($url[0]);
         }
+        
         require_once '../app/controllers/'. $this->controller.'.php';
         //class di instansiasi agar bisa memanggil method
         $this->controller = new $this->controller;
