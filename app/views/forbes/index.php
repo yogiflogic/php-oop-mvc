@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col-9">
             <h3 class="alert-info">FORBES 2021</h3>
+            <!--
             <table class="table table-responsive text-center  align-middle table-striped table-hover ">
                 <thead>
                     <tr>
@@ -16,18 +17,16 @@
                         <th>Year</th>
                     </tr>
                 </thead>
-                <?php foreach($data['fbs'] as $forbes) : ?>
-                    <tr>
-                        <td><?= $forbes['Rank']; ?></td>
-                        <td><?= $forbes['Name']; ?></td>
-                        <td><?= $forbes['Country']; ?></td>
-                        <td><?= $forbes['Sales']; ?></td>
-                        <td><?= $forbes['Profit']; ?></td>
-                        <td><?= $forbes['Assets']; ?></td>
-                        <td><?= $forbes['Market_Value']; ?></td>
-                        <td><?= $forbes['Year']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
+                -->
+                <div class="container">
+                <ul class="list-group">
+                    <?php foreach($data['fbs'] as $forbes) : ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-start "><?= $forbes['Name']?>
+                        <a href="<?= BASEURL; ?>forbes/detail/<?= $forbes['id'] ?>" class="badge rounded-pill bg-primary  ">Primary</a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                "</div>
             </table>
             </div>
         </div>
