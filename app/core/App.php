@@ -1,5 +1,5 @@
-<?php
-// URL link -> controller/method/parameter
+<?php 
+// URL link ->[domain]/controller(folder)/method/parameter
 /*
     Route -> - membuat prety URL(url yang rapi) dengan file .htaccsess
              - Block akses file/folder penting dengan .htaccess
@@ -17,6 +17,15 @@
     Model -> - Berbagai macam bisa di isi 
 
 */
+/*
+    -- FLOW APLIKASI MVC --
+        Core = Controll->View->Model
+    folder(public/index.php)-> folder(app/core/app.php)-> folder(app/controllers/Home.php||Forbes.php||About.php, atau apas aja file yang tersedian di folder controller)
+    stelah itu -> folder (model/ menyesuaikan file yang di butuhkan)
+
+
+*/
+
 class App{
     protected $controller = 'Home';
     protected $method = 'index';

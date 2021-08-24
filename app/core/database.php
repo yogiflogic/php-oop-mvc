@@ -16,7 +16,8 @@ public function __construct()
         $option = [
             //ATTR = Atribute
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_CASE => PDO::CASE_NATURAL
         ];
 
         try{
@@ -68,12 +69,16 @@ public function __construct()
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    //untuk satu data/satu kolom
+    //untuk satu data/satu kolom/one field
     public function single()
     {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
     
+    public function rowCount()
+    {                   //rowcount di bawah adalah method dari PDO
+        return $this->stmt->rowCount();
+    }
 }
 ?>
